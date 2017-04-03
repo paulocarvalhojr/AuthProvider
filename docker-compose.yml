@@ -1,0 +1,11 @@
+
+version: '2'
+
+services:
+  pc.core.auth:
+    image: pc.core.auth:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
