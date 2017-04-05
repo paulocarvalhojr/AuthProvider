@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PC.Core.Commerce.Controllers
 {
-	[Route("api/[controller]")]
 	[Authorize(Policy = "DisneyBoss")]
+	[Route("api/[controller]")]
 	public class ProductController
 	{
-		[HttpGet]
 		[Authorize(Policy = "DisneyUser")]
+		[HttpGet]
 		public IActionResult Get()
 		{
 			return new OkObjectResult(new [] 
@@ -18,7 +18,7 @@ namespace PC.Core.Commerce.Controllers
 				new { Id = 3, Name = "Product03" }
 			});
 		}
-
+		
 		[HttpPost]
 		public IActionResult AddProduct([FromBody] ProductRequest product)
 		{
